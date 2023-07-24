@@ -1,0 +1,69 @@
+Bài trắc nghiệm
+Câu 1:
+-	Điểm khác biệt giữa kiểu cơ sở dữ liệu quan hệ và phi quan hệ:
++ Cấu trúc: 
+  *Cơ sở dữ liệu quan hệ tuân thủ các quy tắc nghiêm ngặt về các biến thể dữ liệu và mối quan        hệ bảng
+  *Cơ sở dữ liệu phi quan hệ linh hoạt hơn và cho phép sử dụng nhiều biến thể dữ liệu hơn.
++ Cơ chế bảo đảm tính toàn vẹn dữ liệu:
+  *Mô hình cơ sở dữ liệu quan hệ tuân thủ nghiêm ngặt các thuộc tính ACID
+   *Cơ sở dữ liệu phi quan hệ cung cấp một mô hình linh hoạt hơn với tính sẵn sàng cơ bản, trạng thái mềm và tính nhất quán cuối (BASE).
++ Hiệu năng:
+•	Hiệu năng của cơ sở dữ liệu quan hệ phụ thuộc vào hệ thống con của ổ đĩa
+•	hiệu năng của cơ sở dữ liệu phi quan hệ phụ thuộc vào độ trễ mạng, kích cỡ cụm phần cứng và ứng dụng gọi.
+               + Quy mô
+•	Lược đồ cứng nhắc của hệ thống cơ sở dữ liệu quan hệ có thể đặt ra nhiều thách thức ở quy mô lớn
+•	Cơ sở dữ liệu phi quan hệ có khả năng điều chỉnh quy mô rất linh hoạt.
+Câu 2:
+Quan hệ 1-1: Quan hệ vợ chồng, quan hệ thông tin cơ bản – thông tin chi tiết
+Quan hệ 1-n: Mã số sinh viên – mã sih viên đi học trễ trong năm
+Quan hệ n-n: Môn học – sinh viên, dự án-nhân viên
+Câu 3: D
+Câu 4: A
+Câu 5: C
+
+Bài code
+create database Northwind;
+
+use Northwind;
+
+create table Customer(
+	CustomerID varchar(100),
+    CustomerName varchar(100),
+    Address varchar(100),
+    City varchar(100),
+    Country varchar(100),
+	PRIMARY KEY (CustomerID)
+);
+
+create table Orders(
+	OrderID varchar(100),
+    CustomerID varchar(100),
+    OrderDate date,
+    PRIMARY KEY (OrderID)
+);
+
+create table OrderDetails(
+	OrderDetailID varchar(100),
+    OrderID varchar(100),
+    ProductID varchar(100),
+    Quantity int,
+    PRIMARY KEY (OrderDetailID)
+);
+
+create table Products(
+	ProductID varchar(100),
+    ProductName varchar(100),
+    Category varchar(100),
+    Unit varchar(100),
+    Price varchar(100),
+    PRIMARY KEY (ProductID)
+);
+
+insert into Northwind.OrderDetails(OrderDetailID, OrderID, ProductID, Quantity)
+values ('5', '10249', '1', 40);
+
+
+select * from Northwind.Customer;
+
+insert into Northwind.Customer(CustomerID, CustomerName, Address, City, Country)
+values ('2', 'Ana Trujillo Emparedados', 'Avda. de la Constitución 2222', 'México D.F.', 'Mexico');
