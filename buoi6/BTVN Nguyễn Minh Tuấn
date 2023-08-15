@@ -1,0 +1,33 @@
+-- 1
+select Orders.OrderID, Customers.CustomerID, Customers.CustomerName, Customers.Country from Orders inner join Customers on Orders.CustomerID = Customers.CustomerID order by OrderID ASC;
+-- 2
+select Customers.Country, OrderDetails.Quantity from Customers inner join Orders on Customers.CustomerID = Orders.CustomerID
+inner join OrderDetails on Orders.OrderID = OrderDetails.OrderID order by Quantity DESC;
+-- 3
+select Products.ProductID, Products.ProductName, OrderDetails.Quantity, Products.Price
+from Products inner join OrderDetails on Products.ProductID = OrderDetails.ProductID
+where OrderID = 10248;
+-- 4
+select Orders.OrderID, sum(Products.Price) as "TotalAmount" from Orders inner join Products where OrderID = 10248;
+-- 5
+select Orders.OrderID, sum(Products.Price) as "Total Amount" from Orders inner join Products where OrderDate = "1996-08-01" group by OrderID;
+-- 6
+select Orders.* from Orders inner join Customers on Orders.CustomerID = Customers.CustomerID where Country = "Argentina" or OrderDate < "1996-07-08";
+-- 7
+select * from Products where Price >  (select avg(Price) from Products) order by Price ASC;
+-- 8
+select distinct Orders.* from Orders inner join OrderDetails on Orders.OrderID = OrderDetails.OrderID
+inner join Products on Products.ProductID = OrderDetails.ProductID where Category = "Dairy Products";
+-- 9
+select Customers.CustomerID, Customers.CustomerName
+from Customers full join Orders on Customers.CustomerID = Orders.CustomerID
+inner join OrderDetails on OrderDetails.OrderID = Orders.OrderID
+inner join Products on products.productid = orderdetails.orderid
+where Category = "Dairy Products"
+order by customerid ASC;
+
+Câu 1: Cả JOIN và Union đều có thể dùng để hiển thị dữ liệu từ nhiều bảng khác nhau.
+Câu 2: Left Join hoặc Right Join. Vì left và right join sẽ lấy hết của 1 trong 2 bảng, cho nên nếu cả 2 chỉ có 1 dòng thì bảng hiên thị sẽ có ít nhất 1 dòng.
+Câu 3:A
+Câu 4:B
+Câu 5: D
