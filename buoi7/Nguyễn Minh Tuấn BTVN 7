@@ -1,0 +1,12 @@
+BTVN Code
+https://colab.research.google.com/drive/1eQ7Dx9BSqJ7PJhHqDyuGpdHYBzHEYh4u?usp=sharing
+BTVN Trắc nghiệm + Tự luận
+Câu 1:
+-	Dữ liệu trong thư viện Pandas được tổ chức theo cáu trúc dữ liệu
+-	Dataframe: Chứa các dòng và cột. Dòng đc mặc định đánh số bằng cách đếm từ 0, còn mỗi cột được đánh dấu bằng tên cột.
+-	Series: Khi truy vấn riêng, mỗi dòng hoặc cột được trả về theo cấu trúc dữ liệu Series.
+Câu 2:
+-	Sử dụng câu lệnh read_csv
+Câu 3:D
+Câu 4:D
+Câu 5:C
