@@ -1,0 +1,11 @@
+BTVN Trắc nghiệm và Tự luận
+Câu 1:
+-	Phương thức table[‘tên cột’]
+-	Phương thức loc
+Câu 2: Ta có thể dùng nunique 
+Df[‘Country’].nunique()
+Câu 3: B
+Câu 4: D
+Câu 5:D
+
+BTVN Code: https://colab.research.google.com/drive/1qMiV1-qmtSUNW5V5ClJbhweWFtnOgyGt?usp=sharing
